@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>moist floating</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/css/reset.css">
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/leaflet.css" />
+</head>
+<body>
+	<section id="map"></section>
+	<section id="post" class="post">
+		<div id="post-content"></div>
+		<button id="post-close" class="btn btn-close" onclick="closePost();">close</button>
+	</section>
+	<script type="text/javascript" src="resources/js/jquery-1.11.3.min.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script type="text/javascript">
+		var map = L.map('map').setView([37.55554, 126.97374], 13);
+	</script>
+	<script type="text/javascript" src="resources/js/default.js"></script>
+</body>
+</html>
