@@ -29,8 +29,12 @@ a {
   width: 600px;
   background: rgba(255, 255, 255, 0.9);
   z-index: 9999;
-  transition: transform 300ms ease-out;
-  transform: translateX(0); }
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -ms-transition: transform 300ms ease-out;
+  -webkit-transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out; }
   /* line 7, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   #post.opened {
     display: block;
@@ -48,25 +52,98 @@ a {
     background: none;
     border: 0; }
 
-/* line 12, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+/* line 10, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+#member {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  z-index: 1000; }
+  /* line 11, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  #member dl {
+    position: relative; }
+    /* line 12, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    #member dl dt {
+      position: absolute;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 30px;
+      text-decoration: underline; }
+    /* line 13, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    #member dl dd {
+      padding-left: 80px; }
+      /* line 14, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+      #member dl dd ul {
+        font-size: 0; }
+        /* line 15, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+        #member dl dd ul li {
+          display: inline-block;
+          position: relative;
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+          border-radius: 25px; }
+          /* line 16, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+          #member dl dd ul li a {
+            display: block; }
+            /* line 17, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+            #member dl dd ul li a img {
+              width: 30px;
+              height: 30px;
+              border-radius: 25px; }
+          /* line 19, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+          #member dl dd ul li .tooltip {
+            width: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: -30px 0 0 -10px;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: opacity 300ms ease-out;
+            transition: opacity 300ms ease-out; }
+            /* line 20, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+            #member dl dd ul li .tooltip > span {
+              display: block;
+              width: 40px;
+              padding: 5px;
+              font-size: 12px;
+              background: #fff;
+              border-radius: 3px; }
+            /* line 21, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+            #member dl dd ul li .tooltip:after {
+              content: '';
+              display: inline-block;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 5px solid #fff; }
+          /* line 24, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+          #member dl dd ul li:hover .tooltip {
+            visibility: visible;
+            opacity: 1; }
+
+/* line 33, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
 .post-title {
   position: relative;
   height: 360px; }
-  /* line 13, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  /* line 34, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   .post-title h1 {
     position: absolute;
     top: 30px;
     left: 135px;
     font-size: 66px;
-    font-weight: 900;
+    font-weight: 100;
     color: #fff;
     z-index: 100;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-  /* line 14, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  /* line 35, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   .post-title .date {
     font-size: 14px;
     color: #333; }
-  /* line 15, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  /* line 36, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   .post-title .bg {
     position: absolute;
     top: 0;
@@ -74,7 +151,7 @@ a {
     width: 100%;
     height: 100%;
     z-index: 10; }
-    /* line 16, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 37, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-title .bg-cover {
       position: absolute;
       width: 100%;
@@ -84,14 +161,14 @@ a {
       background-repeat: no-repeat;
       opacity: 0.6;
       z-index: 2; }
-      /* line 17, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+      /* line 38, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
       .post-title .bg-cover .copyrighter {
         position: absolute;
         left: 140px;
         bottom: 20px;
         color: #fff;
         font-size: 12px; }
-    /* line 19, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 40, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-title .bg-image {
       position: absolute;
       width: 100%;
@@ -101,34 +178,34 @@ a {
       background-size: cover;
       z-index: 1; }
 
-/* line 22, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+/* line 43, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
 .post-body {
   padding: 40px; }
-  /* line 23, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  /* line 44, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   .post-body dl {
     overflow: hidden;
     padding-left: 100px;
     padding-top: 50px; }
-    /* line 25, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 45, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-body dl dd {
       word-break: break-all;
       line-height: 1.65em; }
-      /* line 26, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+      /* line 46, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
       .post-body dl dd p {
         padding-top: 20px; }
-        /* line 27, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+        /* line 47, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
         .post-body dl dd p:first-child {
           padding: 0; }
-    /* line 30, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 50, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-body dl:first-child {
       padding-top: 0; }
-  /* line 32, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+  /* line 52, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
   .post-body .profile {
     display: block;
     float: left;
     width: 50%;
     margin-bottom: 15px; }
-    /* line 33, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 53, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-body .profile-photo {
       display: inline-block;
       width: 50px;
@@ -136,12 +213,12 @@ a {
       border-radius: 25px;
       background: #666;
       vertical-align: middle; }
-    /* line 34, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+    /* line 54, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
     .post-body .profile-name {
       padding-left: 10px;
       line-height: 50px; }
 
-/* line 38, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
+/* line 58, /Applications/MAMP/htdocs/moist-floating.github.com/resources/css/common.scss */
 .post .name {
   position: absolute;
   left: 40px;
