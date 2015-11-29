@@ -10,10 +10,30 @@ $(document).ready(function(){
 		id: 'mapbox.streets'
 	}).addTo(map);
 	
-	L.marker([37.55554, 126.97374]).addTo(map);
-	L.marker([37.5704509,126.972531]).addTo(map);
-	L.marker([37.5647193,126.9757702]).addTo(map);
-	L.marker([37.542694,127.0545353]).addTo(map);
+	var chok = L.icon({
+		iconUrl: 'resources/svg/icon-marker-normal.svg',
+		iconRetinaUrl: 'resources/svg/icon-marker-normal.svg',
+		iconSize: [36, 36],
+		iconAnchor: [35, 35]
+	});
+	var current = L.icon({
+		iconUrl: 'resources/svg/icon-marker-current.svg',
+		iconRetinaUrl: 'resources/svg/icon-marker-current.svg',
+		iconSize: [36, 36],
+		iconAnchor: [35, 35]
+	});
+	var about = L.icon({
+		iconUrl: 'resources/svg/icon-marker-about.svg',
+		iconRetinaUrl: 'resources/svg/icon-marker-about.svg',
+		iconSize: [34, 46],
+		iconAnchor: [17, 23]
+	});
+	
+	L.marker([37.55554, 126.97374], {icon: about}).addTo(map);
+	L.marker([37.5704509,126.972531], {icon: chok}).addTo(map);
+	L.marker([37.5647193,126.9757702], {icon: chok}).addTo(map);
+	L.marker([37.542694,127.0545353], {icon: chok}).addTo(map);
+	L.marker([37.5459802,126.9161527], {icon: current}).addTo(map);
 	
 	$(".leaflet-marker-icon").click(function(){
 		$(this).addClass("selected");
